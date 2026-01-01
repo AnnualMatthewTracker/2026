@@ -1,11 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Redirect to hash URL on initial load
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        } else if (location.pathname !== '/' && location.pathname !== '/2026/' && !location.hash) {
+          location.replace(location.origin + location.pathname + '#' + location.pathname);
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/2026/matthew_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matthew Slur Counter 2026</title>
-    <script type="module" crossorigin src="/2026/assets/index-B0oJnbCc.js"></script>
+    <script type="module" crossorigin src="/2026/assets/index-lEOcfQcJ.js"></script>
     <link rel="stylesheet" crossorigin href="/2026/assets/index-CebcxLNv.css">
   </head>
   <body>
